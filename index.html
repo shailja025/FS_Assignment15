@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Assignment-15</title>
+    <style>
+        body {
+            background-color: skyblue;
+        }
+        #container {
+            height: 200px;
+            width: 500px;
+            margin: auto;
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            color: whitesmoke;
+            font-size: 3rem;
+        }
+        #number {
+            margin: auto;
+            margin-top: 50px;
+            margin-left: 90px;
+            text-align: center;
+            font-size: 80px;
+            color: white;
+        }
+        #minus {
+            height: 50px;
+            width: 50px;
+            margin-top: 30px;
+            margin-left: 100px;
+            font-size: 40px;
+            border-right: 2px solid black;
+            border-bottom: 2px solid black;
+            outline-style: none;
+            background-color: white;
+        }
+        #plus {
+            height: 50px;
+            width: 50px;
+            margin-top: 30px;
+            margin-left: 90px;
+            font-size: 40px;
+            border-right: 2px solid black;
+            border-bottom: 2px solid black;
+            outline-style: none;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <h1>COUNTER</h1>
+    <button disabled id="minus" onclick="subtract()">-</button>
+    <span id="number">0</span>
+    <button id="plus" onclick="add()">+</button>
+</div>
+<script>
+    function subtract() {
+        var x = document.getElementById('number');
+        num = x.innerHTML
+        if (num > 0) {
+            num--;
+            if (num == 0) {
+                var y = document.getElementById('minus');
+                y.disabled = true;
+            }
+        }
+        x.innerHTML = num
+    }
+    function add() {
+        var x = document.getElementById('number');
+        num = x.innerHTML;
+        num++;
+        x.innerHTML = num;
+        if (num > 0) {
+            var y = document.getElementById('minus');
+            y.disabled = false;
+        }
+    }
+</script>
+</body>
+</html>
